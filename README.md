@@ -162,3 +162,7 @@ cd meeting-room-admin && npm install && npm run dev   # 管理端
 ## 说明
 
 本项目为课程设计 / 学习用途，演示数据（用户、会议室、预约记录）已随 `db/init.sql` 一并提供。
+
+## 许可
+
+[MIT License](LICENSE) © 2026 张昊
