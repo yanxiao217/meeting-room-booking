@@ -1,0 +1,72 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: meeting-room-server
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/meeting_room_booking?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+    default-property-inclusion: non_null
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+# JWT配置
+jwt:
+  secret: MeetingRoomBookingSecretKey2026VeryLongSecretKeyForHS256Algorithm
+  expiration: 86400000  # 24小时
+
+# 签到二维码AES密钥（16字节）
+qrcode:
+  secret: MrBooking2026Qr!
+
+# 智能问答助手（OpenAI兼容协议；api-key 留空则自动降级为规则解析，功能仍可用）
+chatbot:
+  enabled: true
+  provider: openai
+  base-url: https://api.deepseek.com/v1
+  api-key: ""
+  model: deepseek-chat
+  timeout-seconds: 20
+  rate-limit-per-minute: 10
+  temperature: 0.2
+
+# Knife4j配置
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: '前台接口'
+      display-name: '前台用户接口'
+      paths-to-match: '/api/v1/**'
+      packages-to-scan: com.example.meeting.controller.front
+    - group: '后台接口'
+      display-name: '后台管理接口'
+      paths-to-match: '/api/v1/admin/**'
+      packages-to-scan: com.example.meeting.controller.admin
+
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn

@@ -1,0 +1,64 @@
+// ============================================================
+// "The Board" — design tokens
+// A cool, ink-on-paper schedule board. Grid lines are information.
+// ============================================================
+
+:root {
+  // surfaces
+  --paper: #ecede7;
+  --surface: #ffffff;
+  --surface-2: #f5f6f2;
+  --surface-3: #e7e9e2;
+
+  // ink
+  --ink: #161a17;
+  --ink-2: #5c6460;
+  --ink-3: #8a918c;
+
+  // structure
+  --line: #d5d8d0;
+  --line-strong: #b9bdb4;
+
+  // the one accent
+  --marker: #f3e24a;
+  --marker-ink: #161a17;
+
+  // semantics
+  --free: #2f7a54;
+  --free-soft: #e2efe6;
+  --busy: #8e968f;
+  --busy-soft: #e6e8e3;
+  --warn: #b4791f;
+  --warn-soft: #f6edd8;
+  --danger: #b23a48;
+  --danger-soft: #f7e4e6;
+
+  --radius: 5px;
+  --radius-sm: 3px;
+  --rail: 236px;
+  --topbar: 68px;
+
+  --font-display: 'Archivo', 'IBM Plex Sans', system-ui, sans-serif;
+  --font-ui: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  // element-plus alignment
+  --el-color-primary: #161a17;
+  --el-color-primary-light-3: #43473f;
+  --el-color-primary-light-5: #6b6f68;
+  --el-color-primary-light-7: #a9ada5;
+  --el-color-primary-light-8: #c9ccc5;
+  --el-color-primary-light-9: #e7e9e2;
+  --el-color-primary-dark-2: #000000;
+  --el-color-success: #2f7a54;
+  --el-color-warning: #b4791f;
+  --el-color-danger: #b23a48;
+  --el-color-info: #8e968f;
+  --el-border-radius-base: 5px;
+  --el-font-family: var(--font-ui);
+  --el-text-color-primary: #161a17;
+  --el-text-color-regular: #3a403c;
+  --el-border-color: #d5d8d0;
+  --el-border-color-light: #e0e2db;
+  --el-border-color-lighter: #e8eae3;
+  --el-fill-color-light: #f5f6f2;
+}

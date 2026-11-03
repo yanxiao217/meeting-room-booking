@@ -1,0 +1,320 @@
+// 设计系统变量
+$color-primary: #5B8FB9;
+$color-primary-light: #EBF5FF;
+$color-success: #7C9A72;
+$color-success-light: #F0F9EB;
+$color-warning: #D4845A;
+$color-warning-light: #FDF6EC;
+$color-danger: #C47070;
+$color-danger-light: #FEF0F0;
+
+$color-text-primary: #2D3748;
+$color-text-secondary: #4A5568;
+$color-text-muted: #718096;
+$color-text-placeholder: #A0AEC0;
+
+$color-bg-primary: #FAFAF9;
+$color-bg-secondary: #FFFFFF;
+$color-bg-tertiary: #F7F6F3;
+
+$color-border-light: #E8E5E0;
+$color-border-lighter: #F0EDE8;
+
+// 字体系统
+$font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+$font-size-xs: 12px;
+$font-size-sm: 13px;
+$font-size-base: 14px;
+$font-size-lg: 16px;
+$font-size-xl: 18px;
+$font-size-2xl: 20px;
+$font-size-3xl: 24px;
+
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// 间距系统
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 12px;
+$spacing-lg: 16px;
+$spacing-xl: 20px;
+$spacing-2xl: 24px;
+$spacing-3xl: 32px;
+
+// 圆角系统
+$border-radius-sm: 4px;
+$border-radius-md: 6px;
+$border-radius-lg: 8px;
+$border-radius-xl: 12px;
+
+// 阴影系统
+$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 2px 4px rgba(0, 0, 0, 0.05);
+$shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.05);
+
+// 全局重置
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #app {
+  width: 100%;
+  height: 100%;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  color: $color-text-primary;
+  background-color: $color-bg-primary;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// 滚动条样式
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $color-border-light;
+  border-radius: 3px;
+  
+  &:hover {
+    background-color: $color-text-placeholder;
+  }
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+// 页面容器
+.page-container {
+  padding: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+// 搜索栏
+.search-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-lg;
+  margin-bottom: $spacing-xl;
+  padding: $spacing-xl;
+  background: $color-bg-secondary;
+  border-radius: $border-radius-lg;
+  border: 1px solid $color-border-lighter;
+}
+
+// 表格容器
+.table-container {
+  padding: $spacing-xl;
+  background: $color-bg-secondary;
+  border-radius: $border-radius-lg;
+  border: 1px solid $color-border-lighter;
+}
+
+// 分页容器
+.pagination-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: $spacing-xl;
+}
+
+// 状态标签
+.status-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: $border-radius-sm;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  
+  &.available {
+    color: $color-success;
+    background-color: $color-success-light;
+  }
+  
+  &.maintenance {
+    color: $color-warning;
+    background-color: $color-warning-light;
+  }
+  
+  &.disabled {
+    color: $color-danger;
+    background-color: $color-danger-light;
+  }
+}
+
+// 卡片样式
+.card {
+  background: $color-bg-secondary;
+  border-radius: $border-radius-lg;
+  border: 1px solid $color-border-lighter;
+  
+  &-header {
+    padding: $spacing-lg $spacing-xl;
+    border-bottom: 1px solid $color-border-lighter;
+    font-weight: $font-weight-semibold;
+    color: $color-text-primary;
+  }
+  
+  &-body {
+    padding: $spacing-xl;
+  }
+}
+
+// 表单元素样式覆盖
+.el-input__wrapper,
+.el-select__wrapper,
+.el-textarea__inner {
+  border-radius: $border-radius-md !important;
+  box-shadow: 0 0 0 1px $color-border-light !important;
+  
+  &:hover {
+    box-shadow: 0 0 0 1px $color-text-placeholder !important;
+  }
+  
+  &.is-focus {
+    box-shadow: 0 0 0 1px $color-primary !important;
+  }
+}
+
+.el-button {
+  border-radius: $border-radius-md !important;
+  font-weight: $font-weight-medium !important;
+}
+
+// 实心主色按钮（排除 link/text/plain，避免文字按钮被渲染成蓝色方块）
+.el-button--primary:not(.is-link):not(.is-text):not(.is-plain) {
+  background-color: $color-primary !important;
+  border-color: $color-primary !important;
+
+  &:hover {
+    background-color: darken($color-primary, 5%) !important;
+    border-color: darken($color-primary, 5%) !important;
+  }
+}
+
+// 文字/链接按钮统一使用设计系统配色
+.el-button.is-link:not(.is-disabled),
+.el-button.is-text:not(.is-disabled) {
+  &.el-button--primary {
+    color: $color-primary !important;
+
+    &:hover {
+      color: darken($color-primary, 10%) !important;
+    }
+  }
+
+  &.el-button--success {
+    color: $color-success !important;
+
+    &:hover {
+      color: darken($color-success, 10%) !important;
+    }
+  }
+
+  &.el-button--danger {
+    color: $color-danger !important;
+
+    &:hover {
+      color: darken($color-danger, 10%) !important;
+    }
+  }
+}
+
+.el-table {
+  --el-table-border-color: #{$color-border-lighter};
+  --el-table-header-bg-color: #{$color-bg-tertiary};
+  
+  th.el-table__cell {
+    font-weight: $font-weight-semibold !important;
+    color: $color-text-secondary !important;
+  }
+}
+
+.el-card {
+  --el-card-border-color: #{$color-border-lighter};
+  border-radius: $border-radius-lg !important;
+}
+
+// 工具类
+.text-primary {
+  color: $color-text-primary;
+}
+
+.text-secondary {
+  color: $color-text-secondary;
+}
+
+.text-muted {
+  color: $color-text-muted;
+}
+
+.text-success {
+  color: $color-success;
+}
+
+.text-warning {
+  color: $color-warning;
+}
+
+.text-danger {
+  color: $color-danger;
+}
+
+.font-medium {
+  font-weight: $font-weight-medium;
+}
+
+.font-semibold {
+  font-weight: $font-weight-semibold;
+}
+
+.font-bold {
+  font-weight: $font-weight-bold;
+}
+
+// 间距工具类
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: $spacing-xs; }
+.mt-2 { margin-top: $spacing-sm; }
+.mt-3 { margin-top: $spacing-md; }
+.mt-4 { margin-top: $spacing-lg; }
+.mt-5 { margin-top: $spacing-xl; }
+.mt-6 { margin-top: $spacing-2xl; }
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: $spacing-xs; }
+.mb-2 { margin-bottom: $spacing-sm; }
+.mb-3 { margin-bottom: $spacing-md; }
+.mb-4 { margin-bottom: $spacing-lg; }
+.mb-5 { margin-bottom: $spacing-xl; }
+.mb-6 { margin-bottom: $spacing-2xl; }
+
+.p-0 { padding: 0; }
+.p-1 { padding: $spacing-xs; }
+.p-2 { padding: $spacing-sm; }
+.p-3 { padding: $spacing-md; }
+.p-4 { padding: $spacing-lg; }
+.p-5 { padding: $spacing-xl; }
+.p-6 { padding: $spacing-2xl; }
+
+// 响应式工具类
+@media (max-width: 768px) {
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .hidden-desktop {
+    display: none !important;
+  }
+}
