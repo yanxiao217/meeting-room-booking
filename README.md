@@ -34,6 +34,7 @@
 │   └── GenHash.java            # BCrypt 密码哈希生成工具
 ├── meeting-room-web/           # 用户端（Vue 3）
 ├── meeting-room-admin/         # 管理端（Vue 3）
+├── docs/screenshots/           # 界面截图（用户端 / 管理端）
 ├── db/                         # 建表与增量迁移脚本
 └── 会议室预约管理平台PRD*.md    # 需求文档
 ```
@@ -62,6 +63,50 @@
 ### 管理端
 
 会议室 CRUD 与设备配置 · 预约审批与强制取消 · 候补队列查看与手动补位 · 部门与上下级维护 · 用户与角色管理 · 部门配额配置 · 数据统计看板（使用率 / 闲置热力图 / 预约趋势）· 信用分规则 · 评价审核 · 报修工单流转 · 系统配置（预约规则 / 候补规则 / 通知 / SMTP / AI 模型）· 操作日志。
+
+---
+
+## 界面预览
+
+### 用户端
+
+| 今日空闲 | 本周排期 | 我的预约 |
+|:---:|:---:|:---:|
+| <img src="docs/screenshots/user/01-available-today.png" width="360"> | <img src="docs/screenshots/user/02-week-schedule.png" width="360"> | <img src="docs/screenshots/user/03-my-bookings.png" width="360"> |
+
+| 我的候补 | 会议纪要 | 会议模板 |
+|:---:|:---:|:---:|
+| <img src="docs/screenshots/user/04-my-waitlist.png" width="360"> | <img src="docs/screenshots/user/05-meeting-minutes.png" width="360"> | <img src="docs/screenshots/user/06-meeting-templates.png" width="360"> |
+
+| 信用分 | 设备报修 | 通知中心 |
+|:---:|:---:|:---:|
+| <img src="docs/screenshots/user/07-credit-score.png" width="360"> | <img src="docs/screenshots/user/08-equipment-repair.png" width="360"> | <img src="docs/screenshots/user/09-notifications.png" width="360"> |
+
+| 个人中心 | 智能问答助手 |
+|:---:|:---:|
+| <img src="docs/screenshots/user/10-profile.png" width="360"> | <img src="docs/screenshots/user/11-chatbot.png" width="360"> |
+
+### 管理端
+
+| 会议室管理 | 预约管理 | 候补管理 |
+|:---:|:---:|:---:|
+| <img src="docs/screenshots/admin/01-rooms.png" width="360"> | <img src="docs/screenshots/admin/02-bookings.png" width="360"> | <img src="docs/screenshots/admin/03-waitlist.png" width="360"> |
+
+| 报修管理 | 数据看板 | 数据看板（筛选） |
+|:---:|:---:|:---:|
+| <img src="docs/screenshots/admin/04-repairs.png" width="360"> | <img src="docs/screenshots/admin/05-dashboard.png" width="360"> | <img src="docs/screenshots/admin/06-dashboard-2.png" width="360"> |
+
+| 预约规则 | 候补 / 周期 / 审批规则 | 部门配额 |
+|:---:|:---:|:---:|
+| <img src="docs/screenshots/admin/07-booking-rules.png" width="360"> | <img src="docs/screenshots/admin/08-waitlist-rules.png" width="360"> | <img src="docs/screenshots/admin/09-dept-quota.png" width="360"> |
+
+| 通知配置 | 部门管理 | 用户管理 |
+|:---:|:---:|:---:|
+| <img src="docs/screenshots/admin/10-notification-config.png" width="360"> | <img src="docs/screenshots/admin/11-departments.png" width="360"> | <img src="docs/screenshots/admin/12-users.png" width="360"> |
+
+| 操作日志 | 问答日志 | AI 模型配置 |
+|:---:|:---:|:---:|
+| <img src="docs/screenshots/admin/13-operation-logs.png" width="360"> | <img src="docs/screenshots/admin/14-chatbot-logs.png" width="360"> | <img src="docs/screenshots/admin/15-ai-model-config.png" width="360"> |
 
 ---
 
